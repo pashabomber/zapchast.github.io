@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="slick.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	  $( function() {
+	    $( "#slider-range" ).slider({
+	      range: true,
+	      min: 150,
+	      max: 280000,
+	      step: 50,
+	      values: [ 150, 28000 ],
+	      slide: function( event, ui ) {
+	        $( "#amount" ).val( "Цена: от " + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+	      }
+	    });
+	    $( "#amount" ).val( "Цена: от " + $( "#slider-range" ).slider( "values", 0 ) +
+	      " - " + $( "#slider-range" ).slider( "values", 1 ) );
+	  } );
+	</script>
+</head>
+<body>
+	<div class="menubg"></div>
+	<nav class="top-menu">
+		<div class="wrap flex">
+			<ul>
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Каталог <i class="fa fa-angle-down"></i></a></li>
+				<li><a href="#">Доставка и оплата</a></li>
+				<li><a href="#">О компании</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">Вход</a></li>
+				<li><a href="#">Регистрация</a></li>
+			</ul>
+		</div>
+	</nav>
+	<header class="header">
+		<div class="wrap flex">
+			<div class="menu-button">
+				<i class="fa fa-bars"></i>
+			</div>
+			<div class="logo">
+				<a href="/"><img src="img/logo.png"></a>
+			</div>
+			<div class="search">
+				<a href="tel:+74957502005" class="tel">+7 (495) 750-20-05</a> <a href="mailto:info@zapchasti.ru" class="mail">info@<span>zapchasti.ru</span></a>
+				<form class="flex">
+					<input type="text" placeholder="Поиск товаров">
+					<select>
+						<option>Все категории</option>
+						<option>Все категории</option>
+						<option>Все категории</option>
+					</select>
+					<button></button>
+				</form>
+			</div>
+			<a href="#" class="compare-link">Сравнение (2)</a>
+			<div class="cart">
+				<div class="number">3</div>
+				Корзина:
+				<span>8 618 ₽</span>
+				<a href="#"></a>
+			</div>
+		</div>
+	</header>
+	<div class="wrap">
+		<div class="navi">
+			<nav class="index-catalog-menu inner">
+				<div class="name">
+					<span></span> Каталог товаров <i class="fa fa-angle-down"></i>
+				</div>
+				<ul>
+					<li><a href="#">Расходники для ТО</a></li>
+					<li><a href="#">Двигатель</a></li>
+					<li><a href="#">Запчасти ходовой</a></li>
+					<li><a href="#">Трансмиссия</a></li>
+					<li><a href="#">Кузовные запчасти</a></li>
+					<li><a href="#">Электрика</a></li>
+					<li><a href="#">Тормозные жидкости</a></li>
+					<li><a href="#">Ремни приводные</a></li>
+					<li><a href="#">Предохранители</a></li>
+				</ul>
+			</nav>
+			<div class="links">
+				<a href="#">Расходники для ТО</a>
+				<a href="#" class="other">Фильтры</a>
+				<span>Свечи</span>
+			</div>
+		</div>
+		<div class="catalog-page flex">
+			<div class="left-col">
+				<div class="filter">
+					<div class="name">
+						Фильтр
+					</div>
+					<form>
+						<div class="item">
+							<div class="n">
+								Бренд
+							</div>
+							<div class="select">
+								<input type="checkbox" class="checkbox" id="ch1"><label for="ch1">PARTSMALL <span>(2)</span></label>
+								<input type="checkbox" class="checkbox" id="ch2"><label for="ch2">PATRON <span>(7)</span></label>
+								<input type="checkbox" class="checkbox" id="ch3"><label for="ch3">CARDEX <span>(1)</span></label>
+								<input type="checkbox" class="checkbox" id="ch4"><label for="ch4">AUTOGUR <span>(5)</span></label>
+							</div>
+						</div>
+						<div class="item">
+							<div class="n">
+								Цена
+							</div>
+							<div class="price-select">
+								<div id="slider-range"></div>
+								<div class="flex">
+									<input type="text" id="amount" readonly>
+									<a href="#">Показать</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="sales">
+					<div class="name">
+						Распродажа
+					</div>
+					<div class="item">
+						<div><img src="img/sale1.png"></div>
+						<div>
+							<a href="#">Прокладка картера</a>
+							<div class="price">
+								<span>200 ₽</span> 160 ₽
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div><img src="img/sale2.png"></div>
+						<div>
+							<a href="#">Прокладка насоса охлаждающей</a>
+							<div class="price">
+								<span>370 ₽</span> 170 ₽
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div><img src="img/sale3.png"></div>
+						<div>
+							<a href="#">Кронштейн системы выхлопной</a>
+							<div class="price">
+								<span>600 ₽</span> 450 ₽
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div><img src="img/sale4.png"></div>
+						<div>
+							<a href="#">Уплотнительное кольцо</a>
+							<div class="price">
+								<span>1500 ₽</span> 799 ₽
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div><img src="img/sale5.png"></div>
+						<div>
+							<a href="#">Смазка для суппортов МС</a>
+							<div class="price">
+								<span>120 ₽</span> 80 ₽
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="right-col">
+				<h1><span>Категории товаров</span></h1>
+				<div class="index-categories inner flex">
+					<div class="item">
+						<a href="#"></a>
+						<img src="img/category1.png">
+						Расходники для ТО
+					</div>
+					<div class="item">
+						<a href="#"></a>
+						<img src="img/category2.png">
+						Двигатель
+					</div>
+					<div class="item">
+						<a href="#"></a>
+						<img src="img/category3.png">
+						Запчасти ходовой
+					</div>
+					<div class="item">
+						<a href="#"></a>
+						<img src="img/category4.png">
+						Трансмиссия
+					</div>
+				</div>
+				<h2>Расходники для ТО</h2>
+				<div class="sort flex">
+					<div class="select">
+						<select>
+							<option>По популярности</option>
+							<option>По популярности</option>
+							<option>По популярности</option>
+						</select>
+						<select>
+							<option>В наличии</option>
+							<option>В наличии</option>
+							<option>В наличии</option>
+						</select>
+					</div>
+					<div class="type">
+						<a href="#" class="active"><img src="img/type1.png"> Плиткой</a>
+						<a href="#"><img src="img/type2.png"> Списком</a>
+					</div>
+				</div>
+				<div class="list flex">
+					<div class="site-item">
+						<div class="badges">
+							<a href="#" class="red"><span>Акция</span></a>
+						</div>
+						<div class="image">
+							<a href="#"><img src="img/item12.png"></a>
+						</div>
+						<a href="#" class="name">
+							<span class="discount">-50% Скидка</span>
+							Фильтр воздушный (полиэфирное волокно)
+						</a>
+						<p>SONY</p>
+						<div class="flex">
+							<div class="old">
+								370 ₽
+							</div>
+							<div class="new">
+								160 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="badges">
+							<a href="#" class="blue"><span>Новинка</span></a>
+						</div>
+						<div class="image">
+							<a href="#"><img src="img/item13.png"></a>
+						</div>
+						<a href="#" class="name">
+							Новинка
+						</a>
+						<p>NOKIA</p>
+						<div class="flex">
+							<div class="old">
+								1200 ₽
+							</div>
+							<div class="new">
+								580 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="image">
+							<a href="#"><img src="img/item14.png"></a>
+						</div>
+						<a href="#" class="name">
+							Подшипник генератора передний
+						</a>
+						<p>SONY</p>
+						<div class="flex">
+							<div class="old">
+								720 ₽
+							</div>
+							<div class="new">
+								399 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="image">
+							<a href="#"><img src="img/item15.png"></a>
+						</div>
+						<a href="#" class="name">
+							Болт головки блока Хендай Солярис
+						</a>
+						<p>ACER</p>
+						<div class="flex">
+							<div class="old"></div>
+							<div class="new">
+								220 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="badges">
+							<a href="#" class="red"><span>Акция</span></a> <br/>
+							<a href="#" class="green"><span>Хит продаж</span></a>
+						</div>
+						<div class="image">
+							<a href="#"><img src="img/item16.png"></a>
+						</div>
+						<a href="#" class="name">
+							<span class="discount">-50% Скидка</span>
+							Уплотнительное кольцо, труба выхлопного газа
+						</a>
+						<p>INTEL</p>
+						<div class="flex">
+							<div class="old">
+								6800 ₽
+							</div>
+							<div class="new">
+								1990 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="image">
+							<a href="#"><img src="img/item17.png"></a>
+						</div>
+						<a href="#" class="name">
+							Фильтр салона угольный
+						</a>
+						<p>SONY</p>
+						<div class="flex">
+							<div class="old"></div>
+							<div class="new">
+								160 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="badges">
+							<a href="#" class="green"><span>Хит продаж</span></a>
+						</div>
+						<div class="image">
+							<a href="#"><img src="img/item18.png"></a>
+						</div>
+						<a href="#" class="name">
+							<span class="discount">-50% Скидка</span>
+							Прокладка, впускной / выпускной коллектор
+						</a>
+						<p>ZEISS</p>
+						<div class="flex">
+							<div class="old">
+								7800 ₽
+							</div>
+							<div class="new">
+								4950 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="image">
+							<a href="#"><img src="img/item19.png"></a>
+						</div>
+						<a href="#" class="name">
+							плотнение-масл Хендай Солярис
+						</a>
+						<p>DELL</p>
+						<div class="flex">
+							<div class="old">
+								
+							</div>
+							<div class="new">
+								980 ₽
+							</div>
+						</div>
+					</div>
+					<div class="site-item">
+						<div class="badges">
+							<a href="#" class="blue"><span>Новинка</span></a>
+						</div>
+						<div class="image">
+							<a href="#"><img src="img/item20.png"></a>
+						</div>
+						<a href="#" class="name">
+							Тросик замка капота
+						</a>
+						<p>HARMAN</p>
+						<div class="flex">
+							<div class="old">
+								4500 ₽
+							</div>
+							<div class="new">
+								2100 ₽
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex">
+					<ul class="pages">
+						<li><a href="#" class="active">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">Вперед</a></li>
+					</ul>
+					<div class="result">
+						Товаров 1–9 из 11 всего
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-search-block">
+		<div class="wrap">
+			<form>
+				<input type="text" placeholder="Следите за новостями и получайте скидки">
+				<button>Подписаться</button>
+			</form>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="wrap flex">
+			<div class="logo">
+				<a href="/"><img src="img/logo.png"></a>
+				<p>Мы - интернет-магазин, где можно заказать и получить запчасти для автомобилей</p>
+				<div class="adress">
+					г. Дзержинский, ул. Энергетиков, д.22, корп.1
+					<a href="tel:+74957502005">+7 (495) 750-20-05</a>
+				</div>
+				<div class="social">
+					<div>Мы в соц.сетях</div>
+					<a href="#"><img src="img/social1.png"></a>
+					<a href="#"><img src="img/social2.png"></a>
+					<a href="#"><img src="img/social3.png"></a>
+					<a href="#"><img src="img/social4.png"></a>
+				</div>
+			</div>
+			<nav class="first">
+				<p>Информация</p>
+				<ul>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Гарантия и возврат</a></li>
+					<li><a href="#">Контакты</a></li>
+					<li><a href="#">Оплата</a></li>
+					<li><a href="#">Новости</a></li>
+				</ul>
+			</nav>
+			<nav>
+				<p>Каталог</p>
+				<ul>
+					<li><a href="#">Оригинальные каталоги</a></li>
+					<li><a href="#">Запчасти</a></li>
+					<li><a href="#">Химия и косметика</a></li>
+					<li><a href="#">Шины и диски</a></li>
+					<li><a href="#">По марке автомобиля</a></li>
+					<li><a href="#">Аккумуляторы</a></li>
+				</ul>
+			</nav>
+			<nav>
+				<p class="empty">&nbsp;</p>
+				<ul>
+					<li><a href="#">Аксессуары</a></li>
+					<li><a href="#">По деталям и узлам</a></li>
+					<li><a href="#">Масла</a></li>
+					<li><a href="#">Инструменты</a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+	<div class="bottom-page-line">
+		<div class="wrap flex">
+			<div class="copy">
+				©  <span>2021, Zapchast!</span> Все права защищены.
+			</div>
+			<div class="payment">
+				<img src="img/payment.png">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
